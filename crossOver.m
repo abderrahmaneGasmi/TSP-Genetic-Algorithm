@@ -1,13 +1,16 @@
 function crossed = crossOver( population )
-%UNTITLED7 Summary of this function goes here
-%   Detailed explanation goes here
+%we store each path in a variable
 old1 = population(1,:);
 old2 = population(2,:);
 old3 = population(3,:);
 old4 = population(4,:);
+
+% this is the position where we will cross the paths
 x1 = randi([2,6]);
-%disp(x1);
+% we will cross the paths from x1 to x1+2 which is 3 positions
 x11 = x1+2;
+
+% we store the cities that will be replaced in a variable
 removedserie1 = [];
 removedserie2 = [];
 removedserie3 = [];
@@ -24,6 +27,7 @@ removedserie4 = [removedserie4 old4(i)];
 %old4(x1) = [];
 end
 
+% we remove the duplicates from the paths
 for i=1:3
 old1 = removeDuplicate(old1,removedserie2(i));
 old2 = removeDuplicate(old2,removedserie1(i));
@@ -44,6 +48,8 @@ new2 = [old2(1:x1-1) removedserie1(1:end) old2(x1:end)];
 new3 = [old3(1:x1-1) removedserie4(1:end) old3(x1:end)];
 new4 = [old4(1:x1-1) removedserie3(1:end) old4(x1:end)];
 
+
+% we add the first city to the end of the path to make it a cycle
 if(length(new1)<11)
     new1(11) = new1(1);
 end

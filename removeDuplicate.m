@@ -1,6 +1,5 @@
 function old = removeDuplicate( old,char )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%this is a function that removes a duplicate from a path
 i=1;
 while 1==1
 if old(i)==char

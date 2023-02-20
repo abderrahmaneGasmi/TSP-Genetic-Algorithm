@@ -1,7 +1,7 @@
 function citiesSuffled = Initial( cities )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+
 citiesSuffled = [];
+% we create 4 random paths
 for i = 1:4
     city = cities(randperm(length(cities)));
     city = [city city(1)];
